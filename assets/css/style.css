@@ -4,61 +4,71 @@ body {
 	height: 100%;
 }
 
-.popular {
-	margin: 0 0 0 5vw;
-	width: 15vw;
+.main-header {
+	font-size: 3em;
+	color: #000;
 	background-color: #aaa;
+	margin: 0 auto;
+	margin-bottom: 0%;
+	border: solid black 2px;
+	border-top: none;
+	border-radius: 0 0 10px 10px;
+	width: 70%;
+	text-align: center;
+}
+
+.searchButtons {
+	margin: 0 auto;
+	width: 80%;
 	padding: 1%;
 	text-align: center;
 	border-radius: 8px;
 }
 
-.popular-header {
-	color: #000;
-	margin: 0;
+.searchForm {
+	float: left;
+	margin: 2% 0 0 5%;
 }
 
 input[name="search"] {
-	background-color: #DA1F9C;
+	background-color: #000;
+	width: 100%;
 	border: none;
 	border-radius: 2px;
-	width: 30%;
 	padding: 1vh 0;
-	margin: 0 0 0 30vw;
-	color: #000;
+	color: #aaa;
+	margin-bottom: 1%;
 	padding-left: 1vw;
 	font-weight: 700;
 	font-size: 1.2em;
 	letter-spacing: 1px;
 }
 input[name="search"]::-webkit-input-placeholder {
-  color: #000;
+  color: #aaa;
   font-weight: 100;
 }
 
 input[type="submit"] {
 	padding: 1vh 0;
-	background-color: #DA1F9C;
+	float: right;
+	background-color: #aaa;
 	border: none;
 	border-radius: 2px;
-	width: 6%;
+	padding: 1%;
 	color: #000;	
 }
 
-.main-content {
+.display-box {
 	color: #000;
 	width: 50%;
-	margin: 4vh 0 0 20vw;
-}
-
-.my-search-header, .my-search-results {
-	color: #000;
-	background-color: #aaa;
-	font-size: 2em;
+	padding: 1%;
+	float: left;
+	margin: 2vh 0 0 5vw;
 }
 
 .gif {
 	margin: 1vh 0 0 2vw;
+	display: inline;
 	padding: 1vh 1vw;
 	background-color: #DA1F9C; 
 	color: #000;
@@ -66,4 +76,16 @@ input[type="submit"] {
 	border: none;
 	border-radius: 6px;
 	font-size: 1em;
+}
+
+.rating {
+	color: #aaa;
+	background-color: #000;
+	margin: 0 2% 2% 0;
+}
+
+.fullGifDisplay {
+	background-color: transparent;
+	display: inline;
+	margin: 0 2% 2% 0;
 }
