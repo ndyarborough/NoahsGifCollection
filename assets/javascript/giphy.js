@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+var name;
     var searchTitle = ["Animals", "Family Guy", "Shark Week", "NBA", "NFL"];
 
     function createButtons() {
@@ -12,17 +12,22 @@ $(document).ready(function() {
             $(".searchButtons").append(showBtn);
         }
     }
+
     createButtons();
 
-     $(".searchButtons").on("click",".gif",function() {
+    function getGifs() {
+
         $(".display-box").empty();
-        var name = $(this).data("name");
-        var giphyURL = "http://api.giphy.com/v1/gifs/search?q=" + name + "&api_key=cee1e21b11c740869a9c7558b5981edd&limit=10"
+
+        var giphyURL = "http://api.giphy.com/v1/gifs/search?q=" + searchWord + "&api_key=cee1e21b11c740869a9c7558b5981edd&limit=10";
+       
         $.ajax({
             url: giphyURL,
             method: 'GET'
         }).done(function(response) {
+
             var gifArray = response.data;
+            console.log(gifArray.length);
 
             for (i = 0; i < gifArray.length; i++) {
                 var stillGif = gifArray[i].images.original_still.url;
@@ -33,9 +38,31 @@ $(document).ready(function() {
                 var displayGif = $('<img height="150">').attr('data-animated', animatedGif).attr('data-paused', stillGif).attr('src', stillGif).addClass('playOnHover');
                 var fullGifDisplay = $('<button>').addClass("fullGifDisplay").append(rating, displayGif);
                 $('.display-box').append(fullGifDisplay);
+                console.log("yup");
             }
+            
         });
-    });
+    }
+
+    function getGifsOnClick() {
+        searchWord = $(this).data("name");
+        getGifs();
+    }
+
+     function getGifsOnSubmit() {
+        searchWord = $('#search').val();
+        getGifs();
+
+    }
+
+
+  
+
+    $(".searchButtons").on("click",".gif", getGifsOnClick);
+    $("#submit").on("click", getGifsOnSubmit);
+
+
+
 
     $(document).on('mouseover', '.playOnHover', function() {
         $(this).attr('src', $(this).data('animated'));
@@ -53,6 +80,8 @@ $(document).ready(function() {
        		 createButtons();
         }
         $('#search').val("");
+        
+        
     });
 
 }); //document.ready
