@@ -28,6 +28,9 @@ body {
 .searchForm {
 	float: left;
 	margin: 2% 0 0 5%;
+	background-color: rgba(170,170,170,0.3);
+	border-radius: 10px;
+	padding: 1.5%;
 }
 
 input[name="search"] {
@@ -37,6 +40,7 @@ input[name="search"] {
 	border-radius: 2px;
 	padding: 1vh 0;
 	color: #aaa;
+	margin: 0 auto;
 	margin-bottom: 1%;
 	padding-left: 1vw;
 	font-weight: 700;
@@ -60,10 +64,13 @@ input[type="submit"] {
 
 .display-box {
 	color: #000;
+	background-color: rgba(170,170,170,0.3);
 	width: 50%;
 	padding: 1%;
 	float: left;
-	margin: 2vh 0 0 5vw;
+	margin: 2vh 0 2vh 5vw;
+	border-radius: 10px;
+	display: none;
 }
 
 .gif {
@@ -81,11 +88,14 @@ input[type="submit"] {
 .rating {
 	color: #aaa;
 	background-color: #000;
-	margin: 0 2% 2% 0;
+	margin: 0 auto;
+	width: 80%;
+	border-radius: 10px 10px 0 0;
 }
 
 .fullGifDisplay {
 	background-color: transparent;
 	display: inline;
 	margin: 0 2% 2% 0;
+	border: none;
 }

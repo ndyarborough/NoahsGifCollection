@@ -17,6 +17,8 @@ var name;
 
     function getGifs() {
 
+        $(".display-box").css("display","block");
+
         $(".display-box").empty();
 
         var giphyURL = "http://api.giphy.com/v1/gifs/search?q=" + searchWord + "&api_key=cee1e21b11c740869a9c7558b5981edd&limit=10";
@@ -32,7 +34,7 @@ var name;
             for (i = 0; i < gifArray.length; i++) {
                 var stillGif = gifArray[i].images.original_still.url;
                 var animatedGif = gifArray[i].images.original.url;
-                var thisRating = gifArray[i].rating;
+                var thisRating = "Rating: " + gifArray[i].rating;
 
                 var rating = $("<h3>").text(thisRating).addClass("rating");
                 var displayGif = $('<img height="150">').attr('data-animated', animatedGif).attr('data-paused', stillGif).attr('src', stillGif).addClass('playOnHover');
@@ -81,7 +83,7 @@ var name;
         }
         $('#search').val("");
         
-        
+
     });
 
 }); //document.ready
