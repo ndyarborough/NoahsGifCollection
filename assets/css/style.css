@@ -7,7 +7,7 @@ body {
 .main-header {
 	font-size: 3em;
 	color: #000;
-	background-color: #aaa;
+	background-color: rgba(170,170,170,0.3);
 	margin: 0 auto;
 	margin-bottom: 0%;
 	border: solid black 2px;
@@ -30,12 +30,14 @@ body {
 	margin: 2% 0 0 5%;
 	background-color: rgba(170,170,170,0.3);
 	border-radius: 10px;
-	padding: 1.5%;
+	padding: 0.5% 0 0.5% 1%;
+	width: 100%;
 }
 
 input[name="search"] {
 	background-color: #000;
-	width: 100%;
+	width: 40%;
+	float: left;
 	border: none;
 	border-radius: 2px;
 	padding: 1vh 0;
@@ -54,11 +56,12 @@ input[name="search"]::-webkit-input-placeholder {
 
 input[type="submit"] {
 	padding: 1vh 0;
-	float: right;
+	float: left;
+	display: block;
 	background-color: #aaa;
 	border: none;
 	border-radius: 2px;
-	padding: 1%;
+	padding: 0.5% 1%;
 	color: #000;	
 }
 
@@ -76,13 +79,16 @@ input[type="submit"] {
 .gif {
 	margin: 1vh 0 0 2vw;
 	display: inline;
-	padding: 1vh 1vw;
-	background-color: #DA1F9C; 
+	width: 15%;
+	padding: 2vh 1vw;
+	background-color: #aaa; 
 	color: #000;
 	font-weight: 700;
 	border: none;
 	border-radius: 6px;
 	font-size: 1em;
+	background-position: center;
+
 }
 
 .rating {
@@ -98,4 +104,22 @@ input[type="submit"] {
 	display: inline;
 	margin: 0 2% 2% 0;
 	border: none;
+}
+
+@media screen and (max-width: 1800px){
+	
+	.searchForm, .display-box {
+		width: 80%;
+	}
+
+	input[name="search"] {
+		width: 40%;
+		margin: 0 2% 0 0;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	input[name="search"] {
+		width: 60%;
+	}
 }
