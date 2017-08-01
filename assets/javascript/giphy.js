@@ -1,6 +1,5 @@
 $(document).ready(function() {
-var name;
-var image;
+var name; var image;
     var searchTitle = ["Penelope Cruz", "Family Guy", "Shark Week", "Brooklyn Decker", "NBA", "NFL", "Liger"];
 
     function createButtons() {
@@ -17,23 +16,6 @@ var image;
         }
     }
 
-   //  var imageUrl =  "https://pixabay.com/api/?key=6037100-96edd80dfe924244c3c2729d4&q=yellow+flowers&image_type=photo&pretty=true"
-
-   // $.ajax({
-   //          url: imageUrl,
-   //          method: 'GET'
-   //      }).done(function(response) {
-   //           for (i = 0; i < searchTitle.length; i++) {
-   //          var showBtn = $('<button>').text(searchTitle[i]).addClass('gif').data("name",searchTitle[i]);
-   //          // var imageUrl = getImage();
-           
-   //          showBtn.css("background", image)
-   //          $(".searchButtons").append(showBtn);
-   //      }
-   //      });
-
-
-
     createButtons();
 
     function getGifs() {
@@ -43,7 +25,7 @@ var image;
         }
         $(".display-box").empty();
 
-        var giphyURL = "http://api.giphy.com/v1/gifs/search?q=" + searchWord + "&api_key=cee1e21b11c740869a9c7558b5981edd&limit=10";
+        var giphyURL = "https://api.giphy.com/v1/gifs/search?q=" + searchWord + "&api_key=cee1e21b11c740869a9c7558b5981edd&limit=10";
        
         $.ajax({
             url: giphyURL,
